@@ -1,13 +1,16 @@
 //
-//  DetailViewController.h
+//  Manga.m
 //  MyAnimeList
 //
 //  Created by Utilisateur invité on 7/8/13.
 //  Copyright (c) 2013 collin_t. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Manga.h"
 
-@interface DetailViewController : UIViewController
+
+@implementation Manga
+
+@dynamic name;
 
 @end
