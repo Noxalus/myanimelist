@@ -12,11 +12,14 @@
 
 @interface MasterViewController ()
 <AddMangaViewControllerDelegate>
+@property (nonatomic, strong) NSMutableData *responseData;
 @end
 
 
 
 @implementation MasterViewController
+
+@synthesize responseData = _responseData;
 
 - (void)awakeFromNib
 {
@@ -26,6 +29,75 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+  
+    // HTTP Request
+    NSLog(@"viewDidLoad");
+    self.responseData = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:@"http://mal-api.com/manga/search?q=berserk"]];
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"didReceiveResponse");
+    [self.responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError");
+    NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
+    
+    // convert to JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    NSMutableArray *titles = [NSMutableArray array];
+    for (NSDictionary *manga in res) {
+        [titles addObject:[manga objectForKey:@"title"]];
+    }
+    
+    // Display manga titles
+    for (NSString *title in titles) {
+        NSLog(@"%@", title);
+    }
+    
+    /*
+    // show all values
+    for(id key in res) {
+        id value = [res objectForKey:key];
+        
+        NSString *keyAsString = (NSString *)key;
+        NSString *valueAsString = (NSString *)value;
+        
+        if ([keyAsString isEqualToString:@"synopsis"] || [keyAsString isEqualToString:@"title"]){
+            NSLog(@"%@", keyAsString);
+            NSLog(@"%@", valueAsString);
+        }
+    }
+    
+    // extract specific value...
+    NSArray *results = [res objectForKey:@"results"];
+    
+    for (NSDictionary *result in results) {
+        NSString *icon = [result objectForKey:@"icon"];
+        NSLog(@"icon: %@", icon);
+    }
+    */
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
