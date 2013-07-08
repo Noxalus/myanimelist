@@ -7,12 +7,14 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "AddMangaViewController.h"
 
 @interface MasterViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+<AddMangaViewControllerDelegate>
 @end
+
+
 
 @implementation MasterViewController
 
@@ -45,7 +47,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
@@ -68,6 +69,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    }
+    else if ([[segue identifier] isEqualToString:@"ShowAddMangaView"]) {
+        AddMangaViewController *addController = (AddMangaViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        addController.delegate = self;
     }
 }
 
@@ -97,8 +102,13 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
+
+-(void)addMangaViewControllerDidCancel:(AddMangaViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller {
+    
 }
 
 @end

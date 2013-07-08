@@ -58,7 +58,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="36">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dt7-Y1-qtL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dt7-Y1-qtL">
+                            <connections>
+                                <segue destination="eaz-LM-jEi" kind="modal" identifier="ShowAddMangaView" id="BAS-qu-7u0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
@@ -96,10 +100,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="999" y="64"/>
+        </scene>
+        <!--Add Manga View Controller - Rechercher-->
+        <scene sceneID="hX9-6X-58Q">
+            <objects>
+                <viewController id="NJB-fG-PND" customClass="AddMangaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gem-iO-Ba5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rechercher" id="CUi-aF-hal">
+                        <barButtonItem key="leftBarButtonItem" title="Annuler" id="dsM-WH-Xzj">
+                            <connections>
+                                <action selector="cancel:" destination="NJB-fG-PND" id="wam-Pa-E25"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkc-Q7-niC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1467" y="805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mSn-gw-FZp">
+            <objects>
+                <navigationController id="eaz-LM-jEi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iKy-Ti-2rb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NJB-fG-PND" kind="relationship" relationship="rootViewController" id="VSY-I6-bFj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0y-2F-vmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="805"/>
         </scene>
     </scenes>
     <classes>
+        <class className="AddMangaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMangaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+            </relationships>
+        </class>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
         </class>

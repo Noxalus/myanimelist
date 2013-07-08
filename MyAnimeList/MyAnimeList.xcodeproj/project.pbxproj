@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9F4036178B65E700A176DA /* AddMangaViewController.m */; };
 		ACEB7CAC178B49D900357A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAB178B49D900357A81 /* UIKit.framework */; };
 		ACEB7CAE178B49D900357A81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAD178B49D900357A81 /* Foundation.framework */; };
 		ACEB7CB0178B49D900357A81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAF178B49D900357A81 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC9F4035178B65E700A176DA /* AddMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMangaViewController.h; sourceTree = "<group>"; };
+		AC9F4036178B65E700A176DA /* AddMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMangaViewController.m; sourceTree = "<group>"; };
 		ACEB7CA8178B49D900357A81 /* MyAnimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEB7CAB178B49D900357A81 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ACEB7CAD178B49D900357A81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				ACEB7CCC178B49D900357A81 /* MasterViewController.m */,
 				ACEB7CCE178B49D900357A81 /* DetailViewController.h */,
 				ACEB7CCF178B49D900357A81 /* DetailViewController.m */,
+				AC9F4035178B65E700A176DA /* AddMangaViewController.h */,
+				AC9F4036178B65E700A176DA /* AddMangaViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				ACEB7CCD178B49D900357A81 /* MasterViewController.m in Sources */,
 				ACEB7CD0178B49D900357A81 /* DetailViewController.m in Sources */,
 				ACEB7CDA178B522500357A81 /* Manga.m in Sources */,
+				AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +340,7 @@
 				ACEB7CD5178B49D900357A81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
