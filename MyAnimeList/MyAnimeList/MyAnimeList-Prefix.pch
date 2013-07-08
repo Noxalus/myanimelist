@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'BirdWatching' target in the 'BirdWatching' project
+// Prefix header for all source files of the 'MyAnimeList' target in the 'MyAnimeList' project
 //
 
 #import <Availability.h>

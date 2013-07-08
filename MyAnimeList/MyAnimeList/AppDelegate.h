@@ -1,14 +1,14 @@
 //
-//  BirdsAppDelegate.h
-//  BirdWatching
+//  AppDelegate.h
+//  MyAnimeList
 //
-//  Created by Céline Cheung on 28/05/13.
-//
+//  Created by Utilisateur invité on 7/8/13.
+//  Copyright (c) 2013 collin_t. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface BirdsAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
