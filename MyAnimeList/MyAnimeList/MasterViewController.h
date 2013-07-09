@@ -2,7 +2,7 @@
 //  MasterViewController.h
 //  MyAnimeList
 //
-//  Created by Utilisateur invité on 7/8/13.
+//  Created by Utilisateur invi0té on 7/8/13.
 //  Copyright (c) 2013 collin_t. All rights reserved.
 //
 
@@ -10,8 +10,9 @@
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *myMangasArray;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

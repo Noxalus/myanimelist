@@ -9,10 +9,12 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "AddMangaViewController.h"
+#import "Manga.h"
 
-@interface MasterViewController ()
-<AddMangaViewControllerDelegate>
+@interface MasterViewController () <AddMangaViewControllerDelegate>
+
 @property (nonatomic, strong) NSMutableData *responseData;
+
 @end
 
 
@@ -30,14 +32,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-  
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Manga" inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[_managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        // Handle the error.
+    }
+    
+    [self setMyMangasArray:mutableFetchResults];
+
+    
+    
     // HTTP Request
     NSLog(@"viewDidLoad");
     self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
+    NSURLRequest *request2 = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:@"http://mal-api.com/manga/search?q=berserk"]];
     
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [[NSURLConnection alloc] initWithRequest:request2 delegate:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -113,7 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [_myMangasArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

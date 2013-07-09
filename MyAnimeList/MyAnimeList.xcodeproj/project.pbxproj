@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4F537F178C902E00E10881 /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F537E178C902E00E10881 /* Manga.m */; };
 		AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9F4036178B65E700A176DA /* AddMangaViewController.m */; };
 		ACEB7CAC178B49D900357A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAB178B49D900357A81 /* UIKit.framework */; };
 		ACEB7CAE178B49D900357A81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAD178B49D900357A81 /* Foundation.framework */; };
@@ -22,10 +23,11 @@
 		ACEB7CCA178B49D900357A81 /* MyAnimeList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACEB7CC8178B49D900357A81 /* MyAnimeList.xcdatamodeld */; };
 		ACEB7CCD178B49D900357A81 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEB7CCC178B49D900357A81 /* MasterViewController.m */; };
 		ACEB7CD0178B49D900357A81 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEB7CCF178B49D900357A81 /* DetailViewController.m */; };
-		ACEB7CDA178B522500357A81 /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEB7CD9178B522500357A81 /* Manga.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC4F537D178C902D00E10881 /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Manga.h; path = Models/Manga.h; sourceTree = "<group>"; };
+		AC4F537E178C902E00E10881 /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Manga.m; path = Models/Manga.m; sourceTree = "<group>"; };
 		AC9F4035178B65E700A176DA /* AddMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMangaViewController.h; sourceTree = "<group>"; };
 		AC9F4036178B65E700A176DA /* AddMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMangaViewController.m; sourceTree = "<group>"; };
 		ACEB7CA8178B49D900357A81 /* MyAnimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +50,6 @@
 		ACEB7CCC178B49D900357A81 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		ACEB7CCE178B49D900357A81 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		ACEB7CCF178B49D900357A81 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		ACEB7CD8178B522500357A81 /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Manga.h; path = Models/Manga.h; sourceTree = "<group>"; };
-		ACEB7CD9178B522500357A81 /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Manga.m; path = Models/Manga.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		ACEB7CD7178B4A5600357A81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ACEB7CD8178B522500357A81 /* Manga.h */,
-				ACEB7CD9178B522500357A81 /* Manga.m */,
+				AC4F537D178C902D00E10881 /* Manga.h */,
+				AC4F537E178C902E00E10881 /* Manga.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -216,8 +216,8 @@
 				ACEB7CCA178B49D900357A81 /* MyAnimeList.xcdatamodeld in Sources */,
 				ACEB7CCD178B49D900357A81 /* MasterViewController.m in Sources */,
 				ACEB7CD0178B49D900357A81 /* DetailViewController.m in Sources */,
-				ACEB7CDA178B522500357A81 /* Manga.m in Sources */,
 				AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */,
+				AC4F537F178C902E00E10881 /* Manga.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

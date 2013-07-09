@@ -7,15 +7,31 @@
 //
 
 #import "DetailViewController.h"
+#import "Manga.h"
+
+@interface DetailViewController ()
+-(void)configureView;
+@end
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
+-(void)setManga:(Manga *) newManga
+{
+    if (_manga != newManga) {
+        _manga = newManga;
+        [self configureView];
+    }
+}
+
+-(void) configureView
+{
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning

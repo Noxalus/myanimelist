@@ -7,6 +7,7 @@
 //
 
 #import "AddMangaViewController.h"
+#import "Manga.h"
 
 @interface AddMangaViewController ()
 
@@ -35,8 +36,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cancel:(id)sender {
+- (IBAction)cancel:(id)sender
+{
     [[self delegate] addMangaViewControllerDidCancel:self];
+}
+
+- (IBAction)done:(id)sender
+{
+    Manga *manga = [[Manga alloc] init];
+    manga.name = @"Bokurano";
+    [[self delegate] addMangaViewControllerDidFinish:self manga:manga];
 }
 
 @end

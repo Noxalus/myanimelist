@@ -21,7 +21,13 @@
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+
+    NSManagedObjectContext *context = [self managedObjectContext];
+    if (!context) {
+        //ERROR!!!
+    }
+    controller.managedObjectContext = context;
+    
     return YES;
 }
 							

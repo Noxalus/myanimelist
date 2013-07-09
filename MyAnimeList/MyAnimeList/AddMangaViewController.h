@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class Manga;
 @protocol AddMangaViewControllerDelegate;
 
 @interface AddMangaViewController : UIViewController
@@ -15,12 +16,14 @@
 @property (weak, nonatomic) id <AddMangaViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
+
+- (IBAction)done:(id)sender;
 @end
 
 @protocol AddMangaViewControllerDelegate <NSObject>
 
 -(void)addMangaViewControllerDidCancel:(AddMangaViewController *)controller;
 
--(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller;
+-(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller manga: (Manga *) manga;
 
 @end

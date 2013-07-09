@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Manga;
+
 @interface DetailViewController : UIViewController
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Manga *manga;
 
 @end
