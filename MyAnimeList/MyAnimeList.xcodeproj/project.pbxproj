@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC4F537F178C902E00E10881 /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F537E178C902E00E10881 /* Manga.m */; };
+		AC5B77D7178CAEF100D3CE34 /* MyManga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5B77D6178CAEF100D3CE34 /* MyManga.m */; };
 		AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9F4036178B65E700A176DA /* AddMangaViewController.m */; };
 		ACEB7CAC178B49D900357A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAB178B49D900357A81 /* UIKit.framework */; };
 		ACEB7CAE178B49D900357A81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAD178B49D900357A81 /* Foundation.framework */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		AC4F537D178C902D00E10881 /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Manga.h; path = Models/Manga.h; sourceTree = "<group>"; };
 		AC4F537E178C902E00E10881 /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Manga.m; path = Models/Manga.m; sourceTree = "<group>"; };
+		AC5B77D5178CAEF100D3CE34 /* MyManga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyManga.h; sourceTree = "<group>"; };
+		AC5B77D6178CAEF100D3CE34 /* MyManga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyManga.m; sourceTree = "<group>"; };
 		AC9F4035178B65E700A176DA /* AddMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMangaViewController.h; sourceTree = "<group>"; };
 		AC9F4036178B65E700A176DA /* AddMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMangaViewController.m; sourceTree = "<group>"; };
 		ACEB7CA8178B49D900357A81 /* MyAnimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,8 @@
 				ACEB7CCF178B49D900357A81 /* DetailViewController.m */,
 				AC9F4035178B65E700A176DA /* AddMangaViewController.h */,
 				AC9F4036178B65E700A176DA /* AddMangaViewController.m */,
+				AC5B77D5178CAEF100D3CE34 /* MyManga.h */,
+				AC5B77D6178CAEF100D3CE34 /* MyManga.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				ACEB7CD0178B49D900357A81 /* DetailViewController.m in Sources */,
 				AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */,
 				AC4F537F178C902E00E10881 /* Manga.m in Sources */,
+				AC5B77D7178CAEF100D3CE34 /* MyManga.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

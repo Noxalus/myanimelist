@@ -8,6 +8,7 @@
 
 #import "AddMangaViewController.h"
 #import "Manga.h"
+#import "MyManga.h"
 
 @interface AddMangaViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
@@ -37,12 +38,6 @@
     // HTTP Request
     NSLog(@"viewDidLoad");
     self.responseData = [NSMutableData data];
-    /*
-    NSURLRequest *request2 = [NSURLRequest requestWithURL:
-                              [NSURL URLWithString:@"http://mal-api.com/manga/search?q=*"]];
-    
-    [[NSURLConnection alloc] initWithRequest:request2 delegate:self];*/
-
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -59,7 +54,7 @@
     NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+- (void)callWS:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
     NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
     
@@ -69,6 +64,12 @@
     
     NSMutableArray *titles = [NSMutableArray array];
     for (NSDictionary *manga in res) {
+        MyManga *myManga = [[MyManga alloc] init];
+        myManga.name = [manga objectForKey:@"title"];
+        myManga.synopsis = [manga objectForKey:@"synopsis"];
+        myManga.author = [manga objectForKey:@"title"];
+        
+        
         [titles addObject:[manga objectForKey:@"title"]];
     }
     
@@ -107,10 +108,13 @@
 
 - (void)filterListForSearchText:(NSString *)searchText
 {
+    if ([searchText length] > 0){
     NSURLRequest *request2 = [NSURLRequest requestWithURL:
                               [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:searchText]]];
     
-    [[NSURLConnection alloc] initWithRequest:request2 delegate:self];
+    [self callWS:[[NSURLConnection alloc] initWithRequest:request2 delegate:self]];
+    }
+    
     
     /*
     for (NSString *title in _items) {
@@ -260,9 +264,6 @@
 
 - (IBAction)done:(id)sender
 {
-    Manga *manga = [[Manga alloc] init];
-    manga.name = @"Bokurano";
-    [[self delegate] addMangaViewControllerDidFinish:self manga:manga];
 }
 
 @end
