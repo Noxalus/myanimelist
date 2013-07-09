@@ -61,25 +61,17 @@
     // convert to JSON
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+
     
-    NSMutableArray *titles = [NSMutableArray array];
+    [_filteredList removeAllObjects]; //clears the array from all the string objects it might contain from the previous searches
     for (NSDictionary *manga in res) {
         MyManga *myManga = [[MyManga alloc] init];
         myManga.name = [manga objectForKey:@"title"];
         myManga.synopsis = [manga objectForKey:@"synopsis"];
-        myManga.author = [manga objectForKey:@"title"];
+        myManga.image_url = [manga objectForKey:@"image_url"];
         
-        
-        [titles addObject:[manga objectForKey:@"title"]];
-    }
-    
-    [_filteredList removeAllObjects]; //clears the array from all the string objects it might contain from the previous searches
-    
-    // Display manga titles
-    for (NSString *title in titles) {
-        NSLog(@"%@", title);
-        [_filteredList addObject:title];
-        
+        NSLog(@"%@", myManga.name);
+        [_filteredList addObject:myManga];
     }
     
     /*
@@ -192,15 +184,15 @@
     }
     
     // Configure the cell...
-    NSString *title;
+    MyManga *manga;
     if (_isSearching && [_filteredList count]) {
         //If the user is searching, use the list in our filteredList array.
-        title = [_filteredList objectAtIndex:indexPath.row];
+        manga = [_filteredList objectAtIndex:indexPath.row];
     } else {
-        title = [_items objectAtIndex:indexPath.row];
+        manga = [_items objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = title;
+    cell.textLabel.text = manga.name;
     
     return cell;
 }
