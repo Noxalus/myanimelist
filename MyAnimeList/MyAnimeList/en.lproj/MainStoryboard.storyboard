@@ -106,7 +106,31 @@
                     <view key="view" contentMode="scaleToFill" id="Gem-iO-Ba5">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l0y-ya-ypC">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NJB-fG-PND" id="wf6-yL-Sf0"/>
+                                    <outlet property="delegate" destination="NJB-fG-PND" id="NbK-ZQ-2k2"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-zm-Rkn">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NJB-fG-PND" id="aCj-gv-oke"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l0y-ya-ypC" firstAttribute="top" secondItem="XZ5-zm-Rkn" secondAttribute="bottom" type="default" id="2VM-dX-Qqs"/>
+                            <constraint firstItem="l0y-ya-ypC" firstAttribute="bottom" secondItem="Gem-iO-Ba5" secondAttribute="bottom" type="default" id="MbM-Fc-klz"/>
+                            <constraint firstItem="XZ5-zm-Rkn" firstAttribute="top" secondItem="Gem-iO-Ba5" secondAttribute="top" type="default" id="ThN-hN-9zE"/>
+                            <constraint firstItem="XZ5-zm-Rkn" firstAttribute="leading" secondItem="Gem-iO-Ba5" secondAttribute="leading" type="default" id="V8o-D8-9aN"/>
+                            <constraint firstItem="l0y-ya-ypC" firstAttribute="trailing" secondItem="Gem-iO-Ba5" secondAttribute="trailing" type="default" id="bq0-uE-i0y"/>
+                            <constraint firstItem="XZ5-zm-Rkn" firstAttribute="trailing" secondItem="Gem-iO-Ba5" secondAttribute="trailing" type="default" id="eQP-5R-g9U"/>
+                            <constraint firstItem="l0y-ya-ypC" firstAttribute="leading" secondItem="Gem-iO-Ba5" secondAttribute="leading" type="default" id="uT5-lo-YWp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rechercher" id="CUi-aF-hal">
                         <barButtonItem key="leftBarButtonItem" title="Annuler" id="dsM-WH-Xzj">
@@ -115,8 +139,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sampleTableView" destination="l0y-ya-ypC" id="knJ-eR-Um9"/>
+                        <outlet property="searchDisplayController" destination="BCg-Wi-ob8" id="sQU-9B-q7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkc-Q7-niC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="BCg-Wi-ob8">
+                    <connections>
+                        <outlet property="delegate" destination="NJB-fG-PND" id="OdB-j3-h6E"/>
+                        <outlet property="searchBar" destination="XZ5-zm-Rkn" id="TSY-R3-Olu"/>
+                        <outlet property="searchContentsController" destination="NJB-fG-PND" id="DdS-pD-ptk"/>
+                        <outlet property="searchResultsDataSource" destination="NJB-fG-PND" id="vv8-iJ-Jez"/>
+                        <outlet property="searchResultsDelegate" destination="NJB-fG-PND" id="38w-vY-9RI"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1467" y="805"/>
         </scene>
@@ -144,6 +181,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMangaViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="sampleTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="DetailViewController" superclassName="UIViewController">
