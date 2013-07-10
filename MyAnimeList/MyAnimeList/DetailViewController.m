@@ -28,6 +28,7 @@
     Manga *theManga = self.manga;
     if (theManga)
     {
+        self.navigationItem.title = theManga.name;
         self.mangaNameLabel.text =  theManga.name;
         self.mangaSynopsis.text = theManga.synopsis;
         NSURL * imageURL = [NSURL URLWithString:theManga.imageUrl];
@@ -36,7 +37,10 @@
         self.mangaImage.image = image;
         self.mangaNoteSlider.minimumValue = 0;
         self.mangaNoteSlider.maximumValue = 10;
-        self.mangaNoteSlider.value = (int) theManga.grade;
+        self.mangaNoteSlider.value = [theManga.grade floatValue];
+
+        NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
+        [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:1];
         self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", self.mangaNoteSlider.value];
     }
 }
