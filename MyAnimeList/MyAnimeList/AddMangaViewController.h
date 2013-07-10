@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class Manga;
+@class MyManga;
+
 @protocol AddMangaViewControllerDelegate;
 
 @interface AddMangaViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
@@ -24,13 +26,13 @@
 
 - (IBAction)cancel:(id)sender;
 
-- (IBAction)done:(id)sender;
+- (IBAction)done:(NSInteger)sender;
 @end
 
 @protocol AddMangaViewControllerDelegate <NSObject>
 
 -(void)addMangaViewControllerDidCancel:(AddMangaViewController *)controller;
 
--(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller manga: (Manga *) manga;
+-(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller manga: (MyManga *) manga;
 
 @end

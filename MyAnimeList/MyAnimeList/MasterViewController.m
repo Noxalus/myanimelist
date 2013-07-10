@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "AddMangaViewController.h"
 #import "Manga.h"
+#import "MyManga.h"
 
 @interface MasterViewController () <AddMangaViewControllerDelegate>
 @end
@@ -64,7 +65,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = @"Manga";
+    
+    Manga *manga= (Manga *)[_myMangasArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = manga.name;
     return cell;
 }
 
@@ -125,8 +129,35 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
--(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller {
+-(void)addMangaViewControllerDidFinish:(AddMangaViewController *)controller manga:(MyManga *) manga {
+    Manga *newManga = [NSEntityDescription insertNewObjectForEntityForName:@"Manga" inManagedObjectContext:_managedObjectContext];
     
+    newManga.name = manga.name;
+
+    newManga.grade = 0;
+    
+    NSError *error = nil;
+    if (![_managedObjectContext save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    else {
+        NSComparator comparator = ^(id obj1, id obj2)
+        {
+            return [((Manga *) obj1).name caseInsensitiveCompare: ((Manga *) obj2).name];
+        };
+        
+        NSUInteger index = [_myMangasArray indexOfObject:newManga
+                                           inSortedRange:(NSRange) {0, [_myMangasArray count]}
+                                           options:NSBinarySearchingInsertionIndex
+                                           usingComparator:comparator];
+        
+        
+        [_myMangasArray insertObject:newManga atIndex:index];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

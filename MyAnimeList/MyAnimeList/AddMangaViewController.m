@@ -70,7 +70,7 @@
         myManga.synopsis = [manga objectForKey:@"synopsis"];
         myManga.image_url = [manga objectForKey:@"image_url"];
         
-        NSLog(@"%@", myManga.name);
+        //NSLog(@"%@", myManga.name);
         [_filteredList addObject:myManga];
     }
     
@@ -101,10 +101,15 @@
 - (void)filterListForSearchText:(NSString *)searchText
 {
     if ([searchText length] > 0){
-    NSURLRequest *request2 = [NSURLRequest requestWithURL:
-                              [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:searchText]]];
+        
+        NSString *urlParameter = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)searchText, NULL, CFSTR("!*'\";$,#[] "), kCFStringEncodingUTF8));
+        
+        NSLog([@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]);
+        
+        NSURLRequest *request2 = [NSURLRequest requestWithURL:
+                              [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]]];
     
-    [self callWS:[[NSURLConnection alloc] initWithRequest:request2 delegate:self]];
+        [self callWS:[[NSURLConnection alloc] initWithRequest:request2 delegate:self]];
     }
     
     
@@ -239,13 +244,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
     // If you want to push another view upon tapping one of the cells on your table.
-    
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    [self done:indexPath.row];
 }
 
 
@@ -254,8 +260,15 @@
     [[self delegate] addMangaViewControllerDidCancel:self];
 }
 
-- (IBAction)done:(id)sender
+- (IBAction)done:(NSInteger)sender
 {
+    NSLog(@"Add selected manga into CoreData database.");
+    
+    MyManga *selectedManga = [_filteredList objectAtIndex:sender];
+    
+    [[self delegate] addMangaViewControllerDidFinish:self manga:selectedManga];
+
+    NSLog(@"Titre: %@", selectedManga.name);
 }
 
 @end
