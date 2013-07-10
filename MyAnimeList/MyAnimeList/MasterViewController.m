@@ -91,6 +91,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        DetailViewController *details = [segue destinationViewController];
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        details.managedObjectContext = _managedObjectContext;
+        details.manga = (Manga *)[_myMangasArray objectAtIndex:index.row];
     }
     else if ([[segue identifier] isEqualToString:@"ShowAddMangaView"]) {
         AddMangaViewController *addController = (AddMangaViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
@@ -133,6 +137,8 @@
     Manga *newManga = [NSEntityDescription insertNewObjectForEntityForName:@"Manga" inManagedObjectContext:_managedObjectContext];
     
     newManga.name = manga.name;
+    newManga.synopsis = manga.synopsis;
+    newManga.imageUrl = manga.image_url;
 
     newManga.grade = 0;
     
