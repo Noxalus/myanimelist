@@ -272,6 +272,8 @@
     
     MyManga *selectedManga = [_filteredList objectAtIndex:sender];
     
+    NSLog(@"%@", selectedManga.synopsis);
+    
     [[self delegate] addMangaViewControllerDidFinish:self manga:selectedManga];
 
     NSLog(@"Titre: %@", selectedManga.name);

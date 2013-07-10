@@ -139,8 +139,7 @@
     newManga.name = manga.name;
     newManga.synopsis = manga.synopsis;
     newManga.imageUrl = manga.image_url;
-
-    newManga.grade = 0;
+    newManga.grade = manga.members_score;
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {
