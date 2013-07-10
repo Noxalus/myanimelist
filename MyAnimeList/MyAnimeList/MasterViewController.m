@@ -65,7 +65,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = @"Manga";
+    
+    Manga *manga= (Manga *)[_myMangasArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = manga.name;
     return cell;
 }
 

@@ -259,7 +259,9 @@
 {
     NSLog(@"Add selected manga into CoreData database.");
     
-    Manga *selectedManga = [_filteredList objectAtIndex:sender];
+    MyManga *selectedManga = [_filteredList objectAtIndex:sender];
+    
+    [[self delegate] addMangaViewControllerDidFinish:self manga:selectedManga];
 
     NSLog(@"Titre: %@", selectedManga.name);
 }
