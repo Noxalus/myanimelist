@@ -18,16 +18,7 @@
 -(void)setManga:(Manga *) newManga
 {
     if (_manga != newManga) {
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:[NSEntityDescription entityForName:@"Manga" inManagedObjectContext:_managedObjectContext]];
-        
-        NSError *error = nil;
-        NSArray *results = [_managedObjectContext executeFetchRequest:request error:&error];
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", newManga.name];
-        [request setPredicate:predicate];
-        
-        _manga = [results objectAtIndex:0];
+        _manga = newManga;
         [self configureView];
     }
 }
@@ -48,10 +39,11 @@
         self.mangaNoteSlider.maximumValue = 10;
         self.mangaNoteSlider.value = [theManga.grade floatValue];
         
-        NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
-        [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:1];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setMaximumFractionDigits:1];
+        [formatter setMinimumIntegerDigits:1];
         
-        self.mangaNoteNumber.text = [NSString stringWithFormat: @"%.01f/10", self.mangaNoteSlider.value];
+        self.mangaNoteNumber.text = [NSString stringWithFormat:@"%@/10", [formatter stringFromNumber:theManga.grade]];
     }
 }
 
@@ -70,7 +62,15 @@
 - (IBAction)sliderValueChanged:(UISlider *)sender
 {
     self.mangaNoteNumber.text = [NSString stringWithFormat: @"%.01f/10", sender.value];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setMinimumIntegerDigits:1];
+    
     _manga.grade = [NSNumber numberWithFloat:sender.value];
+    
+    
+    self.mangaNoteNumber.text = [NSString stringWithFormat:@"%@/10", [formatter stringFromNumber:_manga.grade]];
+    
     NSError *error;
     [self.managedObjectContext save:&error];
 }
