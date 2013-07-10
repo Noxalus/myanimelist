@@ -38,10 +38,11 @@
         self.mangaNoteSlider.minimumValue = 0;
         self.mangaNoteSlider.maximumValue = 10;
         self.mangaNoteSlider.value = [theManga.grade floatValue];
-
+        
         NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
         [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:1];
-        self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", self.mangaNoteSlider.value];
+        
+        self.mangaNoteNumber.text = [NSString stringWithFormat: @"%.01f/10", self.mangaNoteSlider.value];
     }
 }
 
@@ -59,6 +60,6 @@
 
 - (IBAction)sliderValueChanged:(UISlider *)sender
 {
-    self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", sender.value];
+    self.mangaNoteNumber.text = [NSString stringWithFormat: @"%.01f/10", sender.value];
 }
 @end
