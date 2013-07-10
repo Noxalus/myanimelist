@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *mangaSynopsis;
 @property (weak, nonatomic) IBOutlet UISlider *mangaNoteSlider;
 @property (weak, nonatomic) IBOutlet UILabel *mangaNoteNumber;
+@property (weak, nonatomic) IBOutlet UILabel *mangaScore;
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 
 @end
