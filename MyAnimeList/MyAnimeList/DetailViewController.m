@@ -30,13 +30,13 @@
     {
         self.mangaNameLabel.text =  theManga.name;
         self.mangaSynopsis.text = theManga.synopsis;
-        NSURL * imageURL = [NSURL URLWithString:theManga.url_image];
+        NSURL * imageURL = [NSURL URLWithString:theManga.imageUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
         self.mangaImage.image = image;
         self.mangaNoteSlider.minimumValue = 0;
         self.mangaNoteSlider.maximumValue = 10;
-        self.mangaNoteSlider.value = (int) theManga.note;
+        self.mangaNoteSlider.value = (int) theManga.grade;
         self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", self.mangaNoteSlider.value];
     }
 }
