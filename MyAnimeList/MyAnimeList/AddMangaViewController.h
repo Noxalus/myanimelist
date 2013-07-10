@@ -26,7 +26,7 @@
 
 - (IBAction)cancel:(id)sender;
 
-- (IBAction)done:(id)sender;
+- (IBAction)done:(NSInteger)sender;
 @end
 
 @protocol AddMangaViewControllerDelegate <NSObject>
