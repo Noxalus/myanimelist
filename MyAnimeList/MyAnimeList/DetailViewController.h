@@ -14,5 +14,11 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Manga *manga;
+@property (weak, nonatomic) IBOutlet UILabel *mangaNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *mangaImage;
+@property (weak, nonatomic) IBOutlet UITextView *mangaSynopsis;
+@property (weak, nonatomic) IBOutlet UISlider *mangaNoteSlider;
+@property (weak, nonatomic) IBOutlet UILabel *mangaNoteNumber;
+- (IBAction)sliderValueChanged:(UISlider *)sender;
 
 @end

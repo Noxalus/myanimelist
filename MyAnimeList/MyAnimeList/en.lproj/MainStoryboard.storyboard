@@ -83,17 +83,68 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwJ-3T-zW0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="0Na-Vc-Qsr"/>
+                                    <constraint firstAttribute="width" constant="167" id="Mk4-XY-61a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-CK-eYp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Nom-xP-8Nu"/>
+                                    <constraint firstAttribute="width" constant="128" id="y2Q-vz-RJM"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-Lz-hZX">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="277" id="fNv-i3-a8v"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qBU-W7-suH">
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="21" eventType="valueChanged" id="S4r-cD-b1Z"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-Uy-fKJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="27" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" type="default" id="7cE-gL-0wv"/>
+                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="leading" secondItem="dCF-CK-eYp" secondAttribute="leading" type="default" id="DLL-Wg-X7m"/>
+                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="leading" secondItem="dCF-CK-eYp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Lob-Qg-4Hc"/>
+                            <constraint firstAttribute="bottom" secondItem="qBU-W7-suH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="M8E-xh-Xfz"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
+                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="top" secondItem="dCF-CK-eYp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zu3-ry-sp8"/>
+                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bMa-Nb-hgQ"/>
+                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="trailing" secondItem="4SD-Lz-hZX" secondAttribute="trailing" type="default" id="bdq-hL-18f"/>
+                            <constraint firstItem="dCF-CK-eYp" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="8" id="gCM-eD-geM"/>
+                            <constraint firstItem="qBU-W7-suH" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oBW-0L-33O"/>
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
+                            <constraint firstItem="dCF-CK-eYp" firstAttribute="top" secondItem="22" secondAttribute="top" constant="8" id="pXR-YH-anv"/>
+                            <constraint firstItem="rIf-Uy-fKJ" firstAttribute="top" secondItem="4SD-Lz-hZX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r5Z-q7-b2S"/>
+                            <constraint firstAttribute="trailing" secondItem="rIf-Uy-fKJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xDB-3x-Giw"/>
+                            <constraint firstItem="rIf-Uy-fKJ" firstAttribute="trailing" secondItem="qBU-W7-suH" secondAttribute="trailing" type="default" id="yaO-V2-57D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26">
-                        <barButtonItem key="rightBarButtonItem" title="Noter" id="oHk-9Z-yaD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <connections>
+                        <outlet property="mangaImage" destination="dCF-CK-eYp" id="VFQ-7n-5ca"/>
+                        <outlet property="mangaNameLabel" destination="HwJ-3T-zW0" id="8rI-Yb-KHm"/>
+                        <outlet property="mangaNoteNumber" destination="rIf-Uy-fKJ" id="yJ7-HD-Cus"/>
+                        <outlet property="mangaNoteSlider" destination="qBU-W7-suH" id="HZ7-Gh-Wqe"/>
+                        <outlet property="mangaSynopsis" destination="4SD-Lz-hZX" id="JUS-UN-7CZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>

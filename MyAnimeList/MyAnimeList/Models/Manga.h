@@ -14,5 +14,8 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * grade;
+@property (nonatomic, retain) NSString * synopsis;
+@property (nonatomic, retain) NSString * url_image;
+@property (nonatomic) NSInteger * note;
 
 @end

@@ -13,5 +13,8 @@
 
 @dynamic name;
 @dynamic grade;
+@dynamic note;
+@dynamic synopsis;
+@dynamic url_image;
 
 @end
