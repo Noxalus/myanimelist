@@ -70,7 +70,13 @@
         myManga.synopsis = [manga objectForKey:@"synopsis"];
         myManga.image_url = [manga objectForKey:@"image_url"];
         
-        //NSLog(@"%@", myManga.name);
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSString *str = [NSString stringWithFormat:@"%@", [manga objectForKey:@"members_score"]];
+        myManga.members_score = [f numberFromString:str];
+        
+        NSLog(@"Note 1: %@", [manga objectForKey:@"members_score"]);
+        NSLog(@"Note 2: %@", myManga.members_score);
         [_filteredList addObject:myManga];
     }
     
@@ -104,7 +110,7 @@
         
         NSString *urlParameter = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)searchText, NULL, CFSTR("!*'\";$,#[] "), kCFStringEncodingUTF8));
         
-        NSLog([@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]);
+        NSLog([@"Request: http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]);
         
         NSURLRequest *request2 = [NSURLRequest requestWithURL:
                               [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]]];

@@ -11,5 +11,6 @@
 @interface MyManga : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *synopsis;
+@property (nonatomic) NSNumber *members_score;
 @property (nonatomic, strong) NSString *image_url;
 @end
