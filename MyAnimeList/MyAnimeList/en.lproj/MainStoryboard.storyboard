@@ -96,8 +96,8 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwJ-3T-zW0">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="103" id="0Na-Vc-Qsr"/>
-                                    <constraint firstAttribute="width" constant="167" id="Mk4-XY-61a"/>
+                                    <constraint firstAttribute="height" constant="103" id="lCs-8Q-rGU"/>
+                                    <constraint firstAttribute="width" constant="188" id="x1b-QS-uCC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -105,13 +105,14 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-CK-eYp">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Nom-xP-8Nu"/>
-                                    <constraint firstAttribute="width" constant="128" id="y2Q-vz-RJM"/>
+                                    <constraint firstAttribute="width" constant="81" id="MzO-Ed-tAD"/>
+                                    <constraint firstAttribute="height" constant="105" id="wzj-Os-ymC"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-Lz-hZX">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="KnV-cG-thb"/>
                                     <constraint firstAttribute="height" constant="277" id="fNv-i3-a8v"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -133,19 +134,18 @@
                         <constraints>
                             <constraint firstItem="27" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" type="default" id="7cE-gL-0wv"/>
                             <constraint firstAttribute="trailing" secondItem="qBU-W7-suH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ABo-E6-0nZ"/>
-                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="leading" secondItem="dCF-CK-eYp" secondAttribute="leading" type="default" id="DLL-Wg-X7m"/>
-                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="leading" secondItem="dCF-CK-eYp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Lob-Qg-4Hc"/>
-                            <constraint firstAttribute="bottom" secondItem="qBU-W7-suH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="M8E-xh-Xfz"/>
+                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="AJS-ql-Z9k"/>
+                            <constraint firstAttribute="trailing" secondItem="rIf-Uy-fKJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ekg-NL-tpc"/>
+                            <constraint firstItem="qBU-W7-suH" firstAttribute="top" secondItem="rIf-Uy-fKJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I6t-C4-GbR"/>
+                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="103" id="Qs6-d8-V54"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
-                            <constraint firstAttribute="trailing" secondItem="rIf-Uy-fKJ" secondAttribute="trailing" constant="29" id="YzI-wa-s33"/>
-                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="top" secondItem="dCF-CK-eYp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zu3-ry-sp8"/>
-                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bMa-Nb-hgQ"/>
-                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="trailing" secondItem="4SD-Lz-hZX" secondAttribute="trailing" type="default" id="bdq-hL-18f"/>
-                            <constraint firstItem="dCF-CK-eYp" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="8" id="gCM-eD-geM"/>
+                            <constraint firstItem="HwJ-3T-zW0" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="UFo-uD-BSa"/>
+                            <constraint firstItem="dCF-CK-eYp" firstAttribute="top" secondItem="22" secondAttribute="top" constant="14" id="f6S-hP-TdT"/>
+                            <constraint firstItem="dCF-CK-eYp" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="9" id="gdp-X9-GqM"/>
                             <constraint firstItem="qBU-W7-suH" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oBW-0L-33O"/>
+                            <constraint firstAttribute="bottom" secondItem="qBU-W7-suH" secondAttribute="bottom" constant="25" id="p3Z-U1-qTt"/>
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
-                            <constraint firstItem="dCF-CK-eYp" firstAttribute="top" secondItem="22" secondAttribute="top" constant="8" id="pXR-YH-anv"/>
-                            <constraint firstItem="qBU-W7-suH" firstAttribute="top" secondItem="rIf-Uy-fKJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qOA-rz-S9w"/>
+                            <constraint firstItem="4SD-Lz-hZX" firstAttribute="top" secondItem="22" secondAttribute="top" constant="137" id="zhX-qT-ogO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
@@ -238,6 +238,34 @@
             <point key="canvasLocation" x="999" y="805"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddMangaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMangaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:" candidateClass="NSInteger"/>
+                <relationship kind="outlet" name="sampleTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="mangaImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mangaNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mangaNoteNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mangaNoteSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="mangaScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mangaSynopsis" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

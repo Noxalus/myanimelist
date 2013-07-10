@@ -70,13 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC435A4C178DAD9D00FCFE84 /* DataController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DataController;
-			sourceTree = "<group>";
-		};
 		ACEB7C9F178B49D900357A81 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +101,6 @@
 		ACEB7CB3178B49D900357A81 /* MyAnimeList */ = {
 			isa = PBXGroup;
 			children = (
-				AC435A4C178DAD9D00FCFE84 /* DataController */,
 				AC5B77D5178CAEF100D3CE34 /* MyManga.h */,
 				AC5B77D6178CAEF100D3CE34 /* MyManga.m */,
 				ACEB7CD7178B4A5600357A81 /* Models */,
