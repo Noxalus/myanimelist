@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="width" constant="128" id="y2Q-vz-RJM"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-Lz-hZX">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-Lz-hZX">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="277" id="fNv-i3-a8v"/>
@@ -243,7 +243,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMangaViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="done:" candidateClass="NSInteger"/>
                 <relationship kind="outlet" name="sampleTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
