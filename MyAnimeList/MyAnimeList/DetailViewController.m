@@ -18,7 +18,16 @@
 -(void)setManga:(Manga *) newManga
 {
     if (_manga != newManga) {
-        _manga = newManga;
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:[NSEntityDescription entityForName:@"Manga" inManagedObjectContext:_managedObjectContext]];
+        
+        NSError *error = nil;
+        NSArray *results = [_managedObjectContext executeFetchRequest:request error:&error];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", newManga.name];
+        [request setPredicate:predicate];
+        
+        _manga = [results objectAtIndex:0];
         [self configureView];
     }
 }
@@ -61,5 +70,8 @@
 - (IBAction)sliderValueChanged:(UISlider *)sender
 {
     self.mangaNoteNumber.text = [NSString stringWithFormat: @"%.01f/10", sender.value];
+    _manga.grade = [NSNumber numberWithFloat:sender.value];
+    NSError *error;
+    [self.managedObjectContext save:&error];
 }
 @end
