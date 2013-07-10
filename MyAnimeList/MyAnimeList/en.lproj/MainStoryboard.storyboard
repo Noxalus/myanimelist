@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="36">
+                    <navigationItem key="navigationItem" title="Ma liste" id="36">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dt7-Y1-qtL">
                             <connections>
                                 <segue destination="eaz-LM-jEi" kind="modal" identifier="ShowAddMangaView" id="BAS-qu-7u0"/>
@@ -243,12 +243,20 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMangaViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:" candidateClass="NSInteger"/>
+                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="sampleTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="mangaImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mangaNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mangaNoteNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mangaNoteSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="mangaSynopsis" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="MasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
