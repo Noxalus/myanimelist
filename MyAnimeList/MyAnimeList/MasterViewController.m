@@ -133,6 +133,8 @@
     Manga *newManga = [NSEntityDescription insertNewObjectForEntityForName:@"Manga" inManagedObjectContext:_managedObjectContext];
     
     newManga.name = manga.name;
+    newManga.synopsis = manga.synopsis;
+    newManga.imageUrl = manga.image_url;
 
     newManga.grade = 0;
     
