@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC435A52178DBF9200FCFE84 /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC435A51178DBF9200FCFE84 /* Manga.m */; };
+		AC435A55178DC0F000FCFE84 /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC435A54178DC0F000FCFE84 /* Manga.m */; };
 		AC5B77D7178CAEF100D3CE34 /* MyManga.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5B77D6178CAEF100D3CE34 /* MyManga.m */; };
 		AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9F4036178B65E700A176DA /* AddMangaViewController.m */; };
 		ACEB7CAC178B49D900357A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB7CAB178B49D900357A81 /* UIKit.framework */; };
@@ -27,8 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC435A50178DBF9200FCFE84 /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manga.h; sourceTree = "<group>"; };
-		AC435A51178DBF9200FCFE84 /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manga.m; sourceTree = "<group>"; };
+		AC435A53178DC0F000FCFE84 /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manga.h; sourceTree = "<group>"; };
+		AC435A54178DC0F000FCFE84 /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manga.m; sourceTree = "<group>"; };
 		AC5B77D5178CAEF100D3CE34 /* MyManga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyManga.h; sourceTree = "<group>"; };
 		AC5B77D6178CAEF100D3CE34 /* MyManga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyManga.m; sourceTree = "<group>"; };
 		AC9F4035178B65E700A176DA /* AddMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMangaViewController.h; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		ACEB7CD7178B4A5600357A81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC435A50178DBF9200FCFE84 /* Manga.h */,
-				AC435A51178DBF9200FCFE84 /* Manga.m */,
+				AC435A53178DC0F000FCFE84 /* Manga.h */,
+				AC435A54178DC0F000FCFE84 /* Manga.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 				ACEB7CD0178B49D900357A81 /* DetailViewController.m in Sources */,
 				AC9F4037178B65E700A176DA /* AddMangaViewController.m in Sources */,
 				AC5B77D7178CAEF100D3CE34 /* MyManga.m in Sources */,
-				AC435A52178DBF9200FCFE84 /* Manga.m in Sources */,
+				AC435A55178DC0F000FCFE84 /* Manga.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,20 @@
 
 -(void) configureView
 {
-    
+    Manga *theManga = self.manga;
+    if (theManga)
+    {
+        self.mangaNameLabel.text =  theManga.name;
+        self.mangaSynopsis.text = theManga.synopsis;
+        NSURL * imageURL = [NSURL URLWithString:theManga.url_image];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        self.mangaImage.image = image;
+        self.mangaNoteSlider.minimumValue = 0;
+        self.mangaNoteSlider.maximumValue = 10;
+        self.mangaNoteSlider.value = (int) theManga.note;
+        self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", self.mangaNoteSlider.value];
+    }
 }
 
 - (void)viewDidLoad
@@ -40,4 +53,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sliderValueChanged:(UISlider *)sender
+{
+    self.mangaNoteNumber.text = [NSString stringWithFormat: @"%f", sender.value];
+}
 @end

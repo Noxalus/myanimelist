@@ -101,10 +101,15 @@
 - (void)filterListForSearchText:(NSString *)searchText
 {
     if ([searchText length] > 0){
-    NSURLRequest *request2 = [NSURLRequest requestWithURL:
-                              [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:searchText]]];
+        
+        NSString *urlParameter = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)searchText, NULL, CFSTR("!*'\";$,#[] "), kCFStringEncodingUTF8));
+        
+        NSLog([@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]);
+        
+        NSURLRequest *request2 = [NSURLRequest requestWithURL:
+                              [NSURL URLWithString:[@"http://mal-api.com/manga/search?q=" stringByAppendingString:urlParameter]]];
     
-    [self callWS:[[NSURLConnection alloc] initWithRequest:request2 delegate:self]];
+        [self callWS:[[NSURLConnection alloc] initWithRequest:request2 delegate:self]];
     }
     
     
